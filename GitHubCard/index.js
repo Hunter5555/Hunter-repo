@@ -3,12 +3,13 @@
            https://api.github.com/users/<your name>
 */
 const cards = document.querySelector(".cards");
-axios.get('https://api.github.com/users/richardmachado')
+axios.get('https://api.github.com/users/hunter555')
   .then((results) => {
 
     const newcard =createCard(results.data);
 
     cards.appendChild(newcard);
+    
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
@@ -29,7 +30,17 @@ axios.get('https://api.github.com/users/richardmachado')
           Using that array, iterate over it, requesting data for each user, creating a new card for each
           user, and adding that card to the DOM.
 */
+let followersArray = [];
+followersArray= ["shadowborn","tetondan","dustinmyers","luishrd","bigknell"];
 
+  followersArray.forEach(follower =>
+    axios
+      .get(`https://api.github.com/users/${follower}`)
+      .then(res => {
+        cards.appendChild(createCard(res.data));
+      })
+      .catch(err => console.log(err))
+  );
 const followersArray = [];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
@@ -58,4 +69,4 @@ const followersArray = [];
   justsml
   luishrd
   bigknell
-*/
+    */
