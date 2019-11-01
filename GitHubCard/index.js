@@ -3,7 +3,7 @@
            https://api.github.com/users/<your name>
 */
 const cards = document.querySelector(".cards");
-axios.get('https://api.github.com/users/Hunter555')
+axios.get('https://api.github.com/users/Hunter5555')
   .then((results) => {
 
     const newcard =createCard(results.data);
@@ -44,7 +44,7 @@ axios.get('https://api.github.com/users/Hunter555')
           user, and adding that card to the DOM.
 */
 let followersArray = [];
-followersArray= ["shadowborn","tetondan","dustinmyers","luishrd","bigknell"];
+followersArray = ["shadowborn","tetondan","dustinmyers","luishrd","bigknell"];
 
   followersArray.forEach(follower =>
     axios
@@ -76,27 +76,28 @@ const followersArray = [];
 
 */
 function createCard(data){
-    const card = document.createElement("div");
-    const image = document.createElement("img");
-    const cardInfo = document.createElement("div");
-    const name = document.createElement("h3");
-    const userName = document.createElement("p");
-    const location = document.createElement("p");
-    const urlAddress = document.createElement("a");
-    const profile = document.createElement("p");
-    const followers = document.createElement("p");
-    const following = document.createElement("p");
-    const bio = document.createElement("p");
+  const card = document.createElement("div");
+  const image = document.createElement("img");
+  const cardInfo = document.createElement("div");
+  const name = document.createElement("h3");
+  const userName = document.createElement("p");
+  const location = document.createElement("p");
+  const urlAddress = document.createElement("a");
+  const profile = document.createElement("p");
+  const followers = document.createElement("p");
+  const following = document.createElement("p");
+  const bio = document.createElement("p");
 
-    card.appendChild(image);
-    card.appendChild(cardInfo);
-    cardInfo.appendChild(name);
-    cardInfo.appendChild(userName);
-    cardInfo.appendChild(location);
-    cardInfo.appendChild(profile);
-    cardInfo.appendChild(followers);
-    cardInfo.appendChild(following);
-    cardInfo.appendChild(bio);
+  card.appendChild(image);
+  card.appendChild(cardInfo);
+  cardInfo.appendChild(name);
+  cardInfo.appendChild(userName);
+  cardInfo.appendChild(location);
+  cardInfo.appendChild(profile);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(following);
+  cardInfo.appendChild(bio);
+
 
     card.classList.add("card");
     cardInfo.classList.add("card-info");
@@ -125,5 +126,6 @@ function createCard(data){
   dustinmyers
   justsml
   luishrd
-  bigknell*/
+  bigknell
+  */
 
