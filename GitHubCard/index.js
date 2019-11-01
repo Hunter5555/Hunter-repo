@@ -3,12 +3,25 @@
            https://api.github.com/users/<your name>
 */
 const cards = document.querySelector(".cards");
-axios.get('https://api.github.com/users/hunter555')
+axios.get('https://api.github.com/users/Hunter555')
   .then((results) => {
 
     const newcard =createCard(results.data);
 
     cards.appendChild(newcard);
+        //Stretch Graph -- begin
+        const calendarDiv = document.createElement("div");
+        cards.appendChild(calendarDiv);
+    
+        calendarDiv.classList.add("calendar");
+    
+        new GitHubCalendar(".calendar", "Hunter5555");
+        //Stretch Graph -- end
+    
+      })
+      .catch((err) => {
+        console.log(err); 
+    })
     
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
