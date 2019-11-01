@@ -84,6 +84,29 @@ function createCard(data){
     cardInfo.appendChild(followers);
     cardInfo.appendChild(following);
     cardInfo.appendChild(bio);
+
+    card.classList.add("card");
+    cardInfo.classList.add("card-info");
+    name.classList.add("name");
+    userName.classList.add("username");
+
+    image.src = data.avatar_url;
+    name.textContent = data.name;
+    userName.textContent=data.login;
+    location.textContent= data.location;
+    followers.textContent = `Followers: ${data.followers}`;
+    following.textContent = `Following: ${data.following}`;
+    bio.textContent = data.bio;
+
+    urlAddress.setAttribute("href", data.html_url);
+    urlAddress.textContent = data.html_url;
+    profile.textContent = "Profile: ";
+    profile.appendChild(urlAddress);
+
+
+    return card;
+}
+
 /* List of LS Instructors Github username's: 
   tetondan
   dustinmyers
